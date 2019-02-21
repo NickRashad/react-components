@@ -8,17 +8,25 @@
 
 // ReactDOM.render(<App />, document.getElementById("app"));
 
-const GroceryListItem = (props) => (
+class GroceryListItem extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  render () {
+    return (
+      <li>{this.props.item}</li>
+    );
+  }
+}
+
+const GroceryList = (props) => (
   <ul>
-    <li>{props.items[0]}</li>
-    <li>{props.items[1]}</li>
-    <li>{props.items[2]}</li>
+    {props.items.map((item) =>
+      <GroceryListItem key={item} item={item}/>
+      )
+    }
   </ul>
 );
 
-var GroceryList = (props) => (
-  <GroceryListItem items={['apples', 'bananas', 'oranges']}/>
-);
-
-ReactDOM.render(<GroceryList />, document.getElementById("app"));
+ReactDOM.render(<GroceryList items={['apples', 'bananas', 'ornages']}/>, document.getElementById("app"));
 
