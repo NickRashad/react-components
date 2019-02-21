@@ -10,9 +10,17 @@
 
 var GroceryList = (props) => (
   <ul>
-    <li>{props.item1}</li>
-    <li>{props.item2}</li>
+    <Apples />
+    <Berries />
   </ul>
 );
 
-ReactDOM.render(<GroceryList item1 = 'apples' item2 = 'berries' />, document.getElementById("app"));
+var Apples = (props) => (
+  <li>apples</li>
+)
+
+var Berries = (props) => (
+  <li>berries</li>
+)
+
+ReactDOM.render(<GroceryList />, document.getElementById("app"));
