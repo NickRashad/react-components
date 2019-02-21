@@ -8,19 +8,17 @@
 
 // ReactDOM.render(<App />, document.getElementById("app"));
 
-var GroceryList = (props) => (
+const GroceryListItem = (props) => (
   <ul>
-    <Apples />
-    <Berries />
+    <li>{props.items[0]}</li>
+    <li>{props.items[1]}</li>
+    <li>{props.items[2]}</li>
   </ul>
 );
 
-var Apples = (props) => (
-  <li>apples</li>
-)
-
-var Berries = (props) => (
-  <li>berries</li>
-)
+var GroceryList = (props) => (
+  <GroceryListItem items={['apples', 'bananas', 'oranges']}/>
+);
 
 ReactDOM.render(<GroceryList />, document.getElementById("app"));
+
